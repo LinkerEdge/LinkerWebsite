@@ -128,6 +128,7 @@ a:focus {
 .sub_page .hero_area {
   min-height: auto;
   background: linear-gradient(130deg, #231a6f, #0f054c);
+
 }
 
 .sub_page .hero_area .hero_bg_box {
@@ -298,9 +299,11 @@ a:focus {
 }
 
 .slider_section .detail-box .btn-box a {
-  margin: 5px;
-  text-align: center;
-  width: 165px;
+  width: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin-bottom: 35px; 
+    
 }
 
 .slider_section .detail-box .btn-box .btn1 {
@@ -308,7 +311,7 @@ a:focus {
   padding: 10px 15px;
   background-color: #00bbf0;
   color: #ffffff;
-  border-radius: 0;
+  border-radius: 20px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: none;
@@ -334,44 +337,45 @@ a:focus {
 }
 
 .slider_section .img-box {
-  margin: 45px 0;
+  margin: -30px 0;
 }
 
 .slider_section .img-box img {
   width: 100%;
-  -webkit-animation: upDown 5s infinite;
-          animation: upDown 5s infinite;
+  -webkit-animation: rightLeft 5s infinite;
+          animation: rightLeft 5s infinite;
 }
 
-@-webkit-keyframes upDown {
+@-webkit-keyframes rightLeft {
   0% {
-    -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    -webkit-transform: translateX(45px);
+            transform: translateX(45px);
   }
   50% {
-    -webkit-transform: translateY(45px);
-            transform: translateY(45px);
+    -webkit-transform: translateX(-45px);
+            transform: translateX(-45px);
   }
   100% {
-    -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    -webkit-transform: translateX(45px);
+            transform: translateX(45px);
   }
 }
 
-@keyframes upDown {
+@keyframes rightLeft {
   0% {
-    -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    -webkit-transform: translateX(45px);
+            transform: translateX(45px);
   }
   50% {
-    -webkit-transform: translateY(45px);
-            transform: translateY(45px);
+    -webkit-transform: translateX(-45px);
+            transform: translateX(-45px);
   }
   100% {
-    -webkit-transform: translateY(-45px);
-            transform: translateY(-45px);
+    -webkit-transform: translateX(45px);
+            transform: translateX(45px);
   }
 }
+
 
 .slider_section .carousel-indicators {
   position: unset;
@@ -400,6 +404,7 @@ a:focus {
 
 .service_section {
   position: relative;
+
 }
 
 .service_section .box {

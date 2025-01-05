@@ -314,7 +314,7 @@ a:focus {
       }
 
       .btn1 {
-        @include hero_btn($primary1, $white, 10px, 15px, 0);
+        @include hero_btn($primary1, $white, 10px, 15px, 0px);
       }
 
       .btn2 {

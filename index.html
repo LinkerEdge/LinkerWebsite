@@ -99,7 +99,7 @@
                 <div class="col-md-6 ">
                   <div class="detail-box">
                     <h1>
-                      we're<br>LinkerEdge
+                      We're<br>LinkerEdge
                     </h1>
                     <p>
                       At LinkerEdge, we are grounded in a passion for creativity and a commitment to innovation. Our expertise lies in strategically enhancing your business concepts, amplifying your vision and elevating your brand to new heights in a competitive marketplace.
@@ -664,27 +664,27 @@
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Panimalar Engineering College
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  +91 9345670169
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  linkeredge.in@gmail.com
                 </span>
               </a>
             </div>
           </div>
           <div class="info_social">
-            <a href="">
+            <!--<a href="">
               <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
+            </a>-->
             <a href="">
               <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
@@ -702,14 +702,14 @@
               Info
             </h4>
             <p>
-              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+              we are grounded in a passion for creativity and a commitment to innovation. Our expertise lies in strategically enhancing your business concepts, amplifying your vision and elevating your brand to new heights in a competitive marketplace.
             </p>
           </div>
         </div>
         <div class="col-md-6 col-lg-2 mx-auto info_col">
           <div class="info_link_box">
             <h4>
-              Links
+              Pages
             </h4>
             <div class="info_links">
               <a class="active" href="index.html">
@@ -721,38 +721,91 @@
               <a class="" href="service.html">
                 Services
               </a>
-              <a class="" href="why.html">
+              <!--<a class="" href="why.html">
                 Why Us
-              </a>
+              </a>-->
               <a class="" href="team.html">
                 Team
               </a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 info_col ">
-          <h4>
-            Subscribe
-          </h4>
-          <form action="#">
-            <input type="text" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
-            </button>
+        <div class="col-md-6 col-lg-3 info_col">
+          <h4>Queries</h4>
+          <form id="queryForm">
+            <input type="email" id="emailInput" placeholder="Email" required/>
+            <input type="text" id="queryTextInput" placeholder="Type your queries" required />
+            <button type="submit">Submit</button>
           </form>
-        </div>
-      </div>
-    </div>
+          <p id="responseMessage" style="display:none; color:white;">Thank you! We have received your query.</p>
+        </div>        
   </section>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+  <script>
+    // Initialize Email.js
+    (function () {
+      emailjs.init("St0HY9GjANr0fPV5I"); // Replace with your Email.js User ID
+    })();
+  
+    document.getElementById("queryForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      // Get the input values
+      const emailInput = document.getElementById("emailInput").value.trim();
+      const queryInput = document.getElementById("queryTextInput").value.trim();
+  
+      // Validate inputs
+      if (!emailInput || !validateEmail(emailInput)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+      if (!queryInput) {
+        alert("Please enter your query.");
+        return;
+      }
+  
+      // Parameters to send
+      const templateParams = {
+        reply_to: emailInput,
+        query: queryInput,
+      };
+  
+      // Send the email
+      emailjs.send("service_odtvc9d", "template_hwsifhj", templateParams)
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            document.getElementById("responseMessage").style.display = "block";
+            document.getElementById("queryForm").reset();
+          },
+          function (error) {
+            console.error("FAILED...", error);
+            alert("Something went wrong. Please try again.");
+          }
+        );
+    });
+  
+    // Function to validate email
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+  
+  
+
 
   <!-- end info section -->
 
   <!-- footer section -->
+  
   <section class="footer_section">
     <div class="container">
       <p>
+
         &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
+        <a href="#">LinkerEdge</a>
       </p>
     </div>
   </section>

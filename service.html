@@ -193,20 +193,20 @@
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Panimalar Engineering College
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Call +91 9345670169,+91 8825817053
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
-                </span>
+                  linkeredge.in@gmail.com
+                                </span>
               </a>
             </div>
           </div>
@@ -215,10 +215,10 @@
             <a href="">
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="https://www.instagram.com/linker_edge/">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="https://github.com/LinkerEdge/LinkerWebsite">
               <i class="fa fa-github" aria-hidden="true"></i>
             </a>
           </div>
@@ -257,23 +257,76 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-3 info_col ">
-          <h4>
-            Subscribe
-          </h4>
-          <form action="#">
-            <input type="text" placeholder="Enter email" />
-            <button type="submit">
-              Subscribe
-            </button>
+        <div class="col-md-6 col-lg-3 info_col">
+          <h4>Queries</h4>
+          <form id="queryForm">
+            <input type="email" id="emailInput" placeholder="Email" required/>
+            <input type="text" id="queryTextInput" placeholder="Type your queries" required />
+            <button type="submit">Submit</button>
           </form>
-        </div>
+          <p id="responseMessage" style="display:none; color:white;">Thank you! We have received your query.</p>
+        </div>        
+  </section>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+  <script>
+    // Initialize Email.js
+    (function () {
+      emailjs.init("St0HY9GjANr0fPV5I"); // Replace with your Email.js User ID
+    })();
+  
+    document.getElementById("queryForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+  
+      // Get the input values
+      const emailInput = document.getElementById("emailInput").value.trim();
+      const queryInput = document.getElementById("queryTextInput").value.trim();
+  
+      // Validate inputs
+      if (!emailInput || !validateEmail(emailInput)) {
+        alert("Please enter a valid email address.");
+        return;
+      }
+      if (!queryInput) {
+        alert("Please enter your query.");
+        return;
+      }
+  
+      // Parameters to send
+      const templateParams = {
+        reply_to: emailInput,
+        query: queryInput,
+      };
+  
+      // Send the email
+      emailjs.send("service_odtvc9d", "template_hwsifhj", templateParams)
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+            document.getElementById("responseMessage").style.display = "block";
+            document.getElementById("queryForm").reset();
+          },
+          function (error) {
+            console.error("FAILED...", error);
+            alert("Something went wrong. Please try again.");
+          }
+        );
+    });
+  
+    // Function to validate email
+    function validateEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  </script>
+  
       </div>
     </div>
   </section>
 
   <!-- end info section -->
 
+  
   <!-- footer section -->
   <section class="footer_section">
     <div class="container">

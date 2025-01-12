@@ -506,7 +506,15 @@ a:focus {
 
 .about_section .img-box img {
   max-width: 100%;
+  -webkit-animation: rightLeft 5s infinite;
+          animation: rightLeft 5s infinite;
+          transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
+
+/*.about_section .img-box img:hover{
+  box-shadow: 0px 0px 20px 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+}*/
 
 .about_section .detail-box h3 {
   font-weight: bold;

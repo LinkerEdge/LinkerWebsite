@@ -275,6 +275,8 @@ a:focus {
 
 .slider_section .detail-box {
   color: #00204a;
+  margin-left: -10px;
+  
 }
 
 .slider_section .detail-box h1 {
@@ -286,7 +288,8 @@ a:focus {
 
 .slider_section .detail-box p {
   color: #fefefe;
-  font-size: 14px;
+  font-size: 18px;
+  align-items: justify;
 }
 
 .slider_section .detail-box .btn-box {

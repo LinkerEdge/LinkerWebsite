@@ -286,6 +286,11 @@ a:focus {
   color: #ffffff;
 }
 
+.slider_section .detail-box ol {
+  color: #fefefe;
+  font-size: 18px;
+  align-items: justify;
+}
 .slider_section .detail-box p {
   color: #fefefe;
   font-size: 18px;

@@ -295,6 +295,7 @@ a:focus {
   color: #fefefe;
   font-size: 18px;
   align-items: justify;
+  text-align: justify;
 }
 
 .slider_section .detail-box .btn-box {
@@ -345,6 +346,7 @@ a:focus {
 
 .slider_section .img-box {
   margin: -30px 0;
+  margin-left: 30px;
 }
 
 .slider_section .img-box img {

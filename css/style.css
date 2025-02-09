@@ -996,3 +996,12 @@ a:focus {
   border-style: inset;
   border-color: white;
 }
+@media (max-width: 768px) {
+  .logo{
+    border-radius: 50%;
+    max-width: 20%;
+    max-height: 30%;
+    border-style: inset;
+    border-color: white;
+  }
+}

@@ -108,3 +108,11 @@
     max-width: 1170px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .why_container p br {
+    display: none;
+    
+}
+
+}

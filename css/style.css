@@ -429,10 +429,16 @@ a:focus {
           align-items: center;
   text-align: center;
   margin-top: 45px;
-  background-color: #f8f8f9;
+  background-image: linear-gradient(to right bottom, #021026, #183053, #315385, #4c78ba, #67a0f3);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 20px;
 }
+.service_section .white-box {
+  background: #ffffff;
+  color: #000; /* Adjust text color for readability */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+}
+
 
 .service_section .box .img-box {
   display: -webkit-box;
